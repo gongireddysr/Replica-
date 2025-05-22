@@ -1,14 +1,25 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import Home from './sections/Home';
-import About from './sections/About';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Projects from './components/Projects/Projects';
+import Resume from './components/Resume/Resume';
+import Footer from './components/Footer';
+import Particle from './components/Particle';
+import ScrollToTop from './components/ScrollToTop';
+import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className="App">
+      <Particle />
       <Navbar />
       <Home />
       <About />
+      <Projects />
+      <Resume />
+      <Footer />
+      <ScrollToTop />
     </div>
   );
 }
