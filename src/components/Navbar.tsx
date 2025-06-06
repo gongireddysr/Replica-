@@ -1,73 +1,92 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar as BootstrapNavbar } from "react-bootstrap/Navbar";
+import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { Link  } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-import logo from "./Assets/logo.png";
+import logo from "../assets/logo.png";
 import { CgFileDocument } from "react-icons/cg";
+import { IconBaseProps } from 'react-icons';
 import './Navbar.css';
 
-const Navbar: React.FunctionComponent = () => {
+interface NavigationBarProps {}
+
+const NavigationBar: React.FC<NavigationBarProps> = () => {
   const [expand, updateExpanded] = useState<boolean>(false);
-  const [NavColor, updatedNavbar] = useState<boolean>(false);
+  const [navColor, updatedNavbar] = useState<boolean>(false);
 
-  function scrollHandler(){
-    if(window.scrollY >= 20){
+  const scrollHandler = (): void => {
+    if (window.scrollY >= 20) {
       updatedNavbar(true);
+    } else {
+      updatedNavbar(false);
     }
-    else{
-      updatedNavbar(false)
-    }
-  }
+  };
 
-  window.addEventListener("scroll", scrollHandler)
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
 
-  return(
-    <BootstrapNavbar
+  const iconProps: IconBaseProps = {
+    size: 20,
+    color: "#333"
+  };
+
+  return (
+    <Navbar
       expanded={expand}
       fixed="top"
       expand="md"
-      className={NavColor ? 'sticky' : 'navbar'}
+      className={navColor ? 'sticky' : 'navbar'}
     >
       <Container>
-        <BootstrapNavbar.Brand href ="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="Brand" />
-        </BootstrapNavbar.Brand>
-        <BootstrapNavbar.Toggle
-        aria-controls="responsive-navbar-nav"
-        onClick={() => {updateExpanded(expand ? false : 'expanded');}}
+        <Navbar.Brand href="/" className="d-flex">
+          <img src={logo} className="img-fluid logo" alt="brand" />
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          onClick={() => { updateExpanded(!expand); }}
         >
           <span></span>
           <span></span>
           <span></span>
-        </BootstrapNavbar.Toggle>
+        </Navbar.Toggle>
 
-
-        <BootstrapNavbar.Collapse id='responsive-navbar-nav'>
-          <Nav className="ms-auto" defaultActiveKey='#home'>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={()=>updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px"}} />Home
+              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <span style={{ marginRight: "5px", display: 'flex', alignItems: 'center' }}>
+                    {React.createElement(AiOutlineHome, iconProps)}
+                  </span>
+                  <span>Home</span>
+                </div>
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/About" onClick={()=>updateExpanded(false)}>
-                <AiOutlineUser style={{ marginBottom: "2px"}} /> About
+              <Nav.Link as={Link} to="/About" onClick={() => updateExpanded(false)}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <span style={{ marginRight: "5px", display: 'flex', alignItems: 'center' }}>
+                    {React.createElement(AiOutlineUser, iconProps)}
+                  </span>
+                  <span>About</span>
+                </div>
               </Nav.Link>
             </Nav.Item>
           </Nav>
-        </BootstrapNavbar.Collapse>
-
+        </Navbar.Collapse>
       </Container>
+    </Navbar>
+  );
+};
 
-    </BootstrapNavbar>
-   );
-}
-
-export default Navbar; 
+export default NavigationBar; 
