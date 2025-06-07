@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -13,9 +13,7 @@ import { CgFileDocument } from "react-icons/cg";
 import { IconBaseProps } from 'react-icons';
 import './Navbar.css';
 
-interface NavigationBarProps {}
-
-const NavigationBar: React.FC<NavigationBarProps> = () => {
+const NavigationBar: React.FC = () => {
   const [expand, updateExpanded] = useState<boolean>(false);
   const [navColor, updatedNavbar] = useState<boolean>(false);
 
@@ -34,9 +32,8 @@ const NavigationBar: React.FC<NavigationBarProps> = () => {
     };
   }, []);
 
-  const iconProps: IconBaseProps = {
-    size: 20,
-    color: "#333"
+  const handleToggleClick = (): void => {
+    updateExpanded(!expand);
   };
 
   return (
@@ -52,7 +49,7 @@ const NavigationBar: React.FC<NavigationBarProps> = () => {
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => { updateExpanded(!expand); }}
+          onClick={handleToggleClick}
         >
           <span></span>
           <span></span>
@@ -62,24 +59,26 @@ const NavigationBar: React.FC<NavigationBarProps> = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <span style={{ marginRight: "5px", display: 'flex', alignItems: 'center' }}>
-                    {React.createElement(AiOutlineHome, iconProps)}
-                  </span>
-                  <span>Home</span>
-                </div>
+              <Nav.Link as={Link as any} to="/" onClick={() => updateExpanded(false)}>
+                {React.createElement(AiOutlineHome as FC<IconBaseProps>, { style: { marginBottom: "2px" } })} Home
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/About" onClick={() => updateExpanded(false)}>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <span style={{ marginRight: "5px", display: 'flex', alignItems: 'center' }}>
-                    {React.createElement(AiOutlineUser, iconProps)}
-                  </span>
-                  <span>About</span>
-                </div>
+              <Nav.Link as={Link as any} to="/About" onClick={() => updateExpanded(false)}>
+                {React.createElement(AiOutlineUser as FC<IconBaseProps>, { style: { marginBottom: "2px" } })} About
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link as={Link as any} to="/Projects" onClick={() => updateExpanded(false)}>
+                {React.createElement(AiOutlineFundProjectionScreen as FC<IconBaseProps>, { style: { marginBottom: "2px" } })} Projects
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link as={Link as any} to="/Resume" onClick={() => updateExpanded(false)}>
+                {React.createElement(CgFileDocument as FC<IconBaseProps>, { style: { marginBottom: "2px" } })} Resume
               </Nav.Link>
             </Nav.Item>
           </Nav>
