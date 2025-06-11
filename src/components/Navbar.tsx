@@ -11,9 +11,8 @@ import {
 import logo from "../assets/logo.png";
 import { CgFileDocument } from "react-icons/cg";
 import { IconBaseProps } from 'react-icons';
-import './Navbar.css';
 
-const NavigationBar: React.FC = () => {
+const NavBar: React.FC = () => {
   const [expand, updateExpanded] = useState<boolean>(false);
   const [navColor, updatedNavbar] = useState<boolean>(false);
 
@@ -88,4 +87,4 @@ const NavigationBar: React.FC = () => {
   );
 };
 
-export default NavigationBar; 
+export default NavBar; 

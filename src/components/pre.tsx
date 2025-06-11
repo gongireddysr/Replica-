@@ -1,5 +1,4 @@
 import React from 'react';
-import './pre.css';
 
 interface PreloaderProps {
   Load: boolean;

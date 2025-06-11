@@ -7,7 +7,6 @@ import Resume from './components/Resume/Resume';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/pre';
-import './App.css';
 import './style.css'; 
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
