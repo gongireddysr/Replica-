@@ -1,3 +1,9 @@
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* --------- */
 /* Navbar Section  */
 /* --------- */
@@ -79,7 +85,7 @@
 }
 
 .navbar-nav .nav-link {
-    color: rgb(233, 10, 10) !important;
+    color: rgb(255, 251, 251) !important;
     padding-right: 1rem !important;
     padding-left: 1rem !important;
 }
@@ -121,4 +127,61 @@
   
 .navbar-nav .nav-item a:hover::after {
     width: 100%;
+}
+
+/* Footer Section */
+.footer {
+    background-color: rgb(10, 4, 22);
+    position: relative;
+    width: 100%;
+    padding-top: 10px !important;
+    padding-bottom: 8px !important;
+    margin-top: auto;
+}
+
+.footer-copywright {
+    text-align: center !important;
+    padding-left: 50px !important;
+}
+
+.footer-body {
+    z-index: 1;
+    text-align: center !important;
+}
+
+@media (max-width: 767px) {
+    .footer-copywright {
+        text-align: center !important;
+        padding-left: 85px !important;
+    }
+
+    .footer-body {
+        text-align: center !important;
+    }
+}
+
+.footer h3 {
+    font-size: 1em;
+    color: white !important;
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+}
+
+.footer-icons {
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+}
+
+.footer-icons li {
+    display: inline-block !important;
+    margin: 0 !important;
+}
+
+.blockquote-footer {
+    color: #a588c0 !important;
 }

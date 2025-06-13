@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Container, Row, Col  } from 'react-bootstrap';
+import { IconType, IconBaseProps } from "react-icons";
+import { AiFillGithub } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   const date = new Date();
@@ -19,21 +22,20 @@ const Footer: React.FC = () => {
             <li className='social-icon'>
               <a 
                 href="https://github.com/gongireddysr"
-                style={{color: 'red'}}
+                style={{color: 'white'}}
                 target="_blank"
                 rel="noopener noreferrer"  
               > 
-                <span className="material-icons">code</span>
+                {React.createElement(AiFillGithub as FC<IconBaseProps>, { size: 24, color: "white" })}
               </a>
             </li>
             <li className='social-icon'>
               <a 
                 href="https://www.linkedin.com/in/saikrishnagr1/"
-                style={{color: 'red'}}
+                style={{color: 'white'}}
                 target="_blank"
-                rel="noopener noreferrer"  
-              > 
-                <span className="material-icons">linkedin</span>
+                rel="noopener noreferrer">  
+                {React.createElement(FaLinkedinIn as FC<IconBaseProps>, { size: 24, color: "white" })}
               </a>
             </li>
           </ul>
