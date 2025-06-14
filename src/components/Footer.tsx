@@ -12,10 +12,10 @@ const Footer: React.FC = () => {
     <Container fluid className='footer'>
       <Row>
         <Col md='4' className="footer-copyright">
-          <h3>Designed and Developed by Sai Krishna</h3>
+          <h3 className="footer-title">Designed and Developed by Sai Krishna</h3>
         </Col>
         <Col md='4' className='footer-copyright'>
-          <h3>Copyright © {year} SK</h3>
+          <h3 className='footer-copyright-sk'>Copyright © {year} SK</h3>
         </Col>
         <Col md='4' className='footer-body'>
           <ul className='footer-icons'>

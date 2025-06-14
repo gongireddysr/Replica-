@@ -129,7 +129,10 @@
     width: 100%;
 }
 
-/* Footer Section */
+/*                      */
+  /* Footer Section */
+/*                       */
+
 .footer {
     background-color: rgb(10, 4, 22);
     position: relative;
@@ -139,10 +142,15 @@
     margin-top: auto;
 }
 
-.footer-copywright {
+.footer-copywright  {
     text-align: center !important;
-    padding-left: 50px !important;
+    padding-left: 150px !important;
 }
+.footer-copywright   {
+    text-align: center !important;
+    padding-left: 150px !important;
+}
+
 
 .footer-body {
     z-index: 1;
@@ -166,7 +174,24 @@
     margin-top: 0.5em !important;
     margin-bottom: 0.5em !important;
 }
-
+.footer-title{
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+}
+.footer-copyright-sk{
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+}
 .footer-icons {
     margin-top: 0.5em !important;
     margin-bottom: 0.5em !important;
@@ -185,3 +210,4 @@
 .blockquote-footer {
     color: #a588c0 !important;
 }
+
