@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Particles from "react-tsparticles";
+import { Engine } from "tsparticles-engine";
+import { loadSlim } from "tsparticles-slim";
 
 const Particle = () => {
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadSlim(engine);
+  }, []);
+
   return (
     <Particles
       id="tsparticles"
+      init={particlesInit}
       options={{
         background: {
           color: {
             value: "transparent",
           },
+        },
+        fullScreen: {
+          enable: false,
+          zIndex: -1
         },
         particles: {
           number: {
