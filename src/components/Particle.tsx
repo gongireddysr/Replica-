@@ -13,82 +13,50 @@ const Particle = () => {
       id="tsparticles"
       init={particlesInit}
       options={{
-        background: {
-          color: {
-            value: "transparent",
-          },
-        },
-        fullScreen: {
-          enable: false,
-          zIndex: -1
-        },
         particles: {
           number: {
-            value: 80,
+            value: 160,
             density: {
               enable: true,
-              value_area: 800
-            }
-          },
-          color: {
-            value: "#a588c0"
-          },
-          shape: {
-            type: "circle"
-          },
-          opacity: {
-            value: 0.5,
-            random: false
-          },
-          size: {
-            value: 3,
-            random: true
+              area: 1500,
+            },
           },
           links: {
-            enable: true,
-            distance: 150,
-            color: "#a588c0",
-            opacity: 0.4,
-            width: 1
+            enable: false,
+            opacity: 0.03,
           },
           move: {
-            enable: true,
-            speed: 2,
-            direction: "none",
-            random: false,
-            straight: false,
-            outModes: {
-              default: "out"
-            }
-          }
+            direction: "right",
+            speed: 0.05,
+          },
+          size: {
+            value: 1,
+          },
+          opacity: {
+            animation: {
+              enable: true,
+              speed: 1,
+              minimumValue: 0.05,
+            },
+          },
         },
         interactivity: {
           events: {
-            onHover: {
-              enable: true,
-              mode: "grab"
-            },
             onClick: {
               enable: true,
-              mode: "push"
-            }
+              mode: "push",
+            },
           },
           modes: {
-            grab: {
-              distance: 140,
-              links: {
-                opacity: 1
-              }
-            },
             push: {
-              quantity: 4
-            }
-          }
+              quantity: 1,
+            },
+          },
         },
-        detectRetina: true
+        detectRetina: true,
       }}
     />
   );
-};
+}
 
 export default Particle;
