@@ -62,15 +62,15 @@ const Home2: React.FC = () => {
               Feel free to <span className="purple">connect </span>with me
             </p>
             <ul className="home-about-social-links">
-              <li>
+              <li className="social-icons">
                  <a 
                 href="https://github.com/gongireddysr"
-                style={{color: 'white'}}
                 target="_blank"
-                rel="noopener noreferrer"  
+                rel="noopener noreferrer"
+                style={{color: 'white'}}  
                 className="icon-colour home-social-icons"
               > 
-                {React.createElement(AiFillGithub as FC<IconBaseProps>, { color: "white" })}
+                {React.createElement(AiFillGithub as FC<IconBaseProps>, { size: 24, color: "white" })}
               </a>
               </li>
               <li className="social-icons">
@@ -81,7 +81,7 @@ const Home2: React.FC = () => {
                 rel="noopener noreferrer"
                 className="icon-colour home-social-icons"
                 >  
-                {React.createElement(FaLinkedinIn as FC<IconBaseProps>, { color: "white" })}
+                {React.createElement(FaLinkedinIn as FC<IconBaseProps>, { size: 24, color: "white" })}
               </a>
               </li>
             </ul>
