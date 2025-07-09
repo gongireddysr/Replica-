@@ -3,6 +3,8 @@ import {Col, Row, Container} from 'react-bootstrap';
 import Particle from '../Particle';
 import Github from './Github'
 import LaptopImg from '../Assets/about.png'
+import Aboutcards from './AboutCards';
+import Techstack from './Techstack';
 
 
 const About: React.FC = () => {
