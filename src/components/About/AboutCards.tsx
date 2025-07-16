@@ -21,13 +21,13 @@ const Aboutcards: React.FC = () => {
           </blockquote>
             <ul>
             <li>
-                 Playing Games
+            <ImPointRight />  Playing Games
             </li>
             <li>
-                 Watching Movies
+            <ImPointRight />  Watching Movies
             </li>
             <       li>
-                 Travelling
+            <ImPointRight />  Travelling
                     </li>
                 </ul>
             </Card.Body>
